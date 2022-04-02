@@ -1,11 +1,17 @@
 {
   "name": "my-shared-components",
   "version": "0.0.1",
+  "scripts": {
+    "build": "ng-packagr -p package.json"
+  },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "ng-packagr": "^13.2.1"
   }
 }

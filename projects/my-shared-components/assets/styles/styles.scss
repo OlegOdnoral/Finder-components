@@ -1,0 +1,10 @@
+@import "fonts";
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+}

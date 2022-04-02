@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'spome-app';
+  @Input() label = 'Default';
+  @Input() disabled = false;
+
+  @Output() click: EventEmitter<void> =  new EventEmitter()
 }
