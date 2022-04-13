@@ -1,4 +1,4 @@
-.finder-main-button {
+.mat-button-base.finder-main-button {
   cursor: pointer;
   padding: 25px 45px 20px 45px;
   border: none;
@@ -7,6 +7,7 @@
   color: var(--text-secondary);
   background-color: var(--nav-background);
   border-bottom: 5px transparent solid;
+  line-height: initial;
 
   &:hover {
     color: var(--text-main);

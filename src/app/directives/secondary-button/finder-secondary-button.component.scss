@@ -1,0 +1,29 @@
+.mat-button-base.finder-secondary-button {
+  min-width: 200px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fff;
+  background-color: var(--secondary-main);
+
+  span.mat-button-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      flex-grow: 1;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: var(--secondary-hover);
+  }
+
+  &:disabled {
+    color: #AFBCC2;
+    background-color: var( --gray-shades-inactive);
+  }
+}

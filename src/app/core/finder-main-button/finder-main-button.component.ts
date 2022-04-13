@@ -7,7 +7,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FinderMainButtonComponent {
-  @Input() label = 'Default';
   @Input() disabled = false;
 
   @Output() click: EventEmitter<void> =  new EventEmitter()

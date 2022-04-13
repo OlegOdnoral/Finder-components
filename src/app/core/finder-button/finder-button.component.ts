@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatButton } from "@angular/material/button";
 
 @Component({
   selector: 'app-finder-button',
@@ -6,9 +7,5 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   styleUrls: ['./finder-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FinderButtonComponent {
-  @Input() label = 'Default';
-  @Input() disabled = false;
-
-  @Output() click: EventEmitter<void> =  new EventEmitter()
+export class FinderButtonComponent extends MatButton {
 }
