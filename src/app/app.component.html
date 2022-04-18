@@ -1,107 +1,158 @@
-<div class="container">
-  <div class="container-row">
-    <app-finder-main-button [disabled]="disabled">
-      {{ label }}
-    </app-finder-main-button>
-    <app-finder-main-button [disabled]="!disabled">
-      {{ label }}
-    </app-finder-main-button>
-  </div>
-</div>
+<!--<div class="container">-->
+<!--  <div class="container-row">-->
+<!--    <app-finder-main-button [disabled]="disabled">-->
+<!--      {{ label }}-->
+<!--    </app-finder-main-button>-->
+<!--    <app-finder-main-button [disabled]="!disabled">-->
+<!--      {{ label }}-->
+<!--    </app-finder-main-button>-->
+<!--  </div>-->
+<!--</div>-->
 
-<!-- finder-main-button -->
-<div class="container">
-  <div class="container-row">
-    <button
-      mat-flat-button
-      finder-main-button
-      [disabled]="disabled"
-      (click)="test(1)"
-    >{{ label }}</button>
-    <button
-      mat-flat-button
-      finder-main-button
-      [disabled]="!disabled"
-      (click)="test(2)"
-    >{{ label }}</button>
-  </div>
-</div>
+<!--&lt;!&ndash; finder-main-button &ndash;&gt;-->
+<!--<div class="container">-->
+<!--  <div class="container-row">-->
+<!--    <button-->
+<!--      mat-flat-button-->
+<!--      finder-main-button-->
+<!--      [disabled]="disabled"-->
+<!--      (click)="test(1)"-->
+<!--    >{{ label }}</button>-->
+<!--    <button-->
+<!--      mat-flat-button-->
+<!--      finder-main-button-->
+<!--      [disabled]="!disabled"-->
+<!--      (click)="test(2)"-->
+<!--    >{{ label }}</button>-->
+<!--  </div>-->
+<!--</div>-->
 
-<!-- finder-primary-button -->
-<div class="container">
-  <div class="container-row">
-    <button
-      mat-flat-button
-      finder-primary-button
-      [disabled]="disabled"
-      (click)="test(1)"
-    >
-      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-      <span>{{ label }}</span>
-    </button>
-    <button
-      mat-flat-button
-      finder-primary-button
-      [disabled]="!disabled"
-      (click)="test(2)"
-    >
-      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-      <span>{{ label }}</span>
-    </button>
-  </div>
-</div>
+<!--&lt;!&ndash; finder-primary-button &ndash;&gt;-->
+<!--<div class="container">-->
+<!--  <div class="container-row">-->
+<!--    <button-->
+<!--      mat-flat-button-->
+<!--      finder-primary-button-->
+<!--      [disabled]="disabled"-->
+<!--      (click)="test(1)"-->
+<!--    >-->
+<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+<!--      <span>{{ label }}</span>-->
+<!--    </button>-->
+<!--    <button-->
+<!--      mat-flat-button-->
+<!--      finder-primary-button-->
+<!--      [disabled]="!disabled"-->
+<!--      (click)="test(2)"-->
+<!--    >-->
+<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+<!--      <span>{{ label }}</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div>-->
 
-<!-- finder-secondary-button -->
-<div class="container">
-  <div class="container-row">
-    <button
-      mat-flat-button
-      finder-secondary-button
-      [disabled]="disabled"
-      (click)="test(1)"
-    >
-      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-      <span>{{ label }}</span>
-    </button>
-    <button
-      mat-flat-button
-      finder-secondary-button
-      [disabled]="!disabled"
-      (click)="test(2)"
-    >
-      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-      <span>{{ label }}</span>
-    </button>
-  </div>
-</div>
+<!--&lt;!&ndash; finder-secondary-button &ndash;&gt;-->
+<!--<div class="container">-->
+<!--  <div class="container-row">-->
+<!--    <button-->
+<!--      mat-flat-button-->
+<!--      finder-secondary-button-->
+<!--      [disabled]="disabled"-->
+<!--      (click)="test(1)"-->
+<!--    >-->
+<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+<!--      <span>{{ label }}</span>-->
+<!--    </button>-->
+<!--    <button-->
+<!--      mat-flat-button-->
+<!--      finder-secondary-button-->
+<!--      [disabled]="!disabled"-->
+<!--      (click)="test(2)"-->
+<!--    >-->
+<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+<!--      <span>{{ label }}</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div>-->
 
-<div class="container">
-  <div class="container-row">
-    <mat-form-field appearance="fill">
-      <mat-label>Select an option</mat-label>
-      <mat-select [(value)]="selected" disableOptionCentering>
-        <mat-option>None</mat-option>
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
-      </mat-select>
-    </mat-form-field>
+<!--<div class="container">-->
+<!--  <div class="container-row">-->
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Select an option</mat-label>-->
+<!--      <mat-select [(value)]="selected" disableOptionCentering>-->
+<!--        <mat-option>None</mat-option>-->
+<!--        <mat-option value="option1">Option 1</mat-option>-->
+<!--        <mat-option value="option2">Option 2</mat-option>-->
+<!--        <mat-option value="option3">Option 3</mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
 
-    <h4>Basic native select</h4>
-    <mat-form-field appearance="fill">
-      <mat-label>Cars</mat-label>
-      <select matNativeControl required>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-    </mat-form-field>
-  </div>
-</div>
+<!--    <h4>Basic native select</h4>-->
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Cars</mat-label>-->
+<!--      <select matNativeControl required>-->
+<!--        <option value="volvo">Volvo</option>-->
+<!--        <option value="saab">Saab</option>-->
+<!--        <option value="mercedes">Mercedes</option>-->
+<!--        <option value="audi">Audi</option>-->
+<!--      </select>-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
+<!--</div>-->
 
 <div class="container">
   <div class="container-row">
     <finder-selector [options]="items" (selectChange)="change($event)"></finder-selector>
   </div>
+</div>
+
+
+<div class="cells-container">
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+</div>
+<hr>
+<div class="cells-container">
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+  <div><span>A</span></div>
+</div>
+<hr>
+<div class="grid-auto-xs@xs grid-gap-m-m">
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+</div>
+<hr>
+<div class="grid-auto-xs grid-auto-md@md grid-gap-m-xl">
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
 </div>

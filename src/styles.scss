@@ -46,3 +46,45 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import "app/comp-theme";
+@import "./flashgrid";
+
+/* (1920x1080) Full HD Display */
+@media screen and (max-width: 1920px) {
+  .cells-container {
+    //height: 90vh;
+    margin: 0 9.75rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    //grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-rows: 1fr 1fr 1fr;
+
+    div {
+      background-color: #9AAAAF;
+      min-width: 7rem;
+      flex: 1;
+      //width: 100%;
+    }
+  }
+}
+
+/* (1600x900) HD+ Display */
+@media screen and (max-width: 1600px) {
+  .cells-container {
+    //height: 90vh;
+    margin: 0 2.25rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    //grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-rows: 1fr 1fr 1fr;
+
+    div {
+      background-color: #9AAAAF;
+      min-width: 9.375rem;
+      flex: 1;
+      //width: 100%;
+    }
+  }
+}
+
