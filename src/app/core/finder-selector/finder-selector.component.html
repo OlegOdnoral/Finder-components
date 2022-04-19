@@ -1,5 +1,5 @@
 <div class="dropdown-container" [ngClass]="disabled ? 'disabled' : '' ">
-  <div (click)="open(dropdown, origin)" class="input-shadow">
+  <div (click)="toggle()" class="input-shadow">
     <input #origin
            [formControl]="searchControl"
            [value]="label"

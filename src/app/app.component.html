@@ -102,9 +102,11 @@
 
 <div class="container">
   <div class="container-row">
-    <finder-selector [options]="items" (selectChange)="change($event)"></finder-selector>
+    <button (click)="selector.toggle()">LOL</button>
+    <finder-selector #selector [formControl]="control" [options]="items"></finder-selector>
   </div>
 </div>
+
 
 
 <div class="cells-container">
