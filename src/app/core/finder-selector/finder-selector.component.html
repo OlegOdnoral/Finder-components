@@ -1,4 +1,4 @@
-<div class="dropdown">
+<div class="dropdown-container" [ngClass]="disabled ? 'disabled' : '' ">
   <div (click)="open(dropdown, origin)" class="input-shadow">
     <input #origin
            [formControl]="searchControl"
@@ -22,8 +22,8 @@
         <div *cdkVirtualFor="let option of options" class="select-item"
              [class.active]="isActive(option)"
              (click)="select(option)">
-          <ng-template [ngIf]="!optionTpl" >
-            <span [title]="option.label">{{option.label}}</span>
+          <ng-template [ngIf]="!optionTpl">
+            <span [title]="option[labelKey]">{{option[labelKey]}}</span>
           </ng-template>
           <ng-template *ngTemplateOutlet="optionTpl; context: {$implicit: option}"></ng-template>
         </div>

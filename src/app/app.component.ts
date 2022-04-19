@@ -19,6 +19,7 @@ export class AppComponent {
   })) as any;
 
   change($event: any) {
+    console.log($event)
   }
 
   test(val: number) {

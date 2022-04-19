@@ -1,6 +1,24 @@
 // ⚡️ Flash Grid
 $grid-columns: 12 !default;
 
+// breakpoints
+$breakpoints: (
+  // 512px
+  xs: 32rem,
+  // 768px
+  sm: 48rem,
+  // 1024px
+  md: 64rem,
+  // 1280px
+  lg: 80rem,
+  // 1440px
+  xl: 90rem,
+) !default;
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
+}
+
 .grid, [class*="grid-auto-"] {
   display: grid;
   grid-gap: var(--grid-gap, 0);
@@ -16,7 +34,6 @@ $grid-columns: 12 !default;
   }
 }
 
-
 [class*="grid-auto-xs"],
 [class*="grid-auto-sm"],
 [class*="grid-auto-md"],
@@ -29,20 +46,24 @@ $grid-columns: 12 !default;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
-.grid-gap-s-m   { --grid-gap: var(--space-xxxxs, 0.5rem); }
-.grid-gap-s-l   { --grid-gap: var(--space-xxxs, 0.75rem); }
-.grid-gap-s-xl  { --grid-gap: var(--space-xxs, 1rem); }
-.grid-gap-s-xxl { --grid-gap: var(--space-xs, 1.25rem); }
+.child-gap-s-m   { --child-gap: var(--space-xxxxs, 0.5rem); }
+.child-gap-s-l   { --child-gap: var(--space-xxxs, 0.75rem); }
+.child-gap-s-xl  { --child-gap: var(--space-xxs, 1rem); }
+.child-gap-s-xxl { --child-gap: var(--space-xs, 1.25rem); }
 
-.grid-gap-m-m   { --grid-gap: var(--space-sm, 1.5rem); }
-.grid-gap-m-l   { --grid-gap: var(--space-md, 2rem); }
-.grid-gap-m-xl  { --grid-gap: var(--space-lg, 2.5rem); }
-.grid-gap-m-xxl { --grid-gap: var(--space-lg, 3rem); }
+.child-gap-m-m   { --child-gap: var(--space-sm, 1.5rem); }
+.child-gap-m-l   { --child-gap-gap: var(--space-md, 2rem); }
+.child-gap-m-xl  { --child-gap: var(--space-lg, 2.5rem); }
+.child-gap-m-xxl { --child-gap: var(--space-lg, 3rem); }
 
-.grid-gap-l-m   { --grid-gap: var(--space-xl, 3.5rem); }
-.grid-gap-l-l   { --grid-gap: var(--space-xxl, 4rem); }
-.grid-gap-l-xl  { --grid-gap: var(--space-xxxl, 5rem); }
-.grid-gap-l-xxl { --grid-gap: var(--space-xxxxl, 6rem); }
+.child-gap-l-m   { --child-gap: var(--space-xl, 3.5rem); }
+.child-gap-l-l   { --child-gap: var(--space-xxl, 4rem); }
+.child-gap-l-xl  { --child-gap: var(--space-xxxl, 5rem); }
+.child-gap-l-xxl { --child-gap: var(--space-xxxxl, 6rem); }
+
+.child {
+  margin: var(--child-gap, 0);
+}
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} { --span: #{$i}; }
@@ -53,25 +74,9 @@ $grid-columns: 12 !default;
 .col-start { grid-column-start: 1; }
 .col-end   { grid-column-end: -1; }
 
-// breakpoints
-$breakpoints: (
-  // 512px
-  xs: 32rem,
-  // 768px
-  sm: 47rem,
-  // 1024px
-  md: 64rem,
-  // 1280px
-  lg: 80rem,
-  // 1440px
-  xl: 90rem,
-) !default;
-
-@mixin breakpoint($breakpoint) {
-  @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
-}
-
 @include breakpoint(xs) {
+  [class*="@xs"] { --grid-margin-left: 2.25rem; --grid-cols: 8; --grid-gap: var(--space-sm, 1.5rem); }
+
   .grid-auto-xs\@xs { --col-min-width: 7rem; }
   .grid-auto-sm\@xs { --col-min-width: 9.375rem; }
   .grid-auto-md\@xs { --col-min-width: 15rem; }
@@ -94,6 +99,8 @@ $breakpoints: (
 }
 
 @include breakpoint(sm) {
+  [class*="@sm"] { --grid-margin-left: 2.25rem;--grid-cols: 8; --grid-gap: var(--space-sm, 1.5rem); }
+
   .grid-auto-xs\@sm { --col-min-width: 7rem; }
   .grid-auto-sm\@sm { --col-min-width: 9.375rem; }
   .grid-auto-md\@sm { --col-min-width: 15rem; }
@@ -116,6 +123,8 @@ $breakpoints: (
 }
 
 @include breakpoint(md) {
+  [class*="@md"] { --grid-margin-left: 2.25rem; --grid-cols: 8; --grid-gap: var(--space-sm, 1.5rem); }
+
   .grid-auto-xs\@md { --col-min-width: 7rem; }
   .grid-auto-sm\@md { --col-min-width: 9.375rem; }
   .grid-auto-md\@md { --col-min-width: 15rem; }
@@ -138,6 +147,8 @@ $breakpoints: (
 }
 
 @include breakpoint(lg) {
+  [class*="@lg"] { --grid-margin-left: 2.25rem; --grid-cols: 8; --grid-gap: var(--space-sm, 1.5rem); }
+
   .grid-auto-xs\@lg { --col-min-width: 7rem; }
   .grid-auto-sm\@lg { --col-min-width: 9.375rem; }
   .grid-auto-md\@lg { --col-min-width: 15rem; }
@@ -160,6 +171,8 @@ $breakpoints: (
 }
 
 @include breakpoint(xl) {
+  [class*="@xl"] { --grid-margin-left: 9.75rem; --grid-cols: 12; --grid-gap: var(--space-sm, 1.5rem); }
+
   .grid-auto-xs\@xl { --col-min-width: 7rem; }
   .grid-auto-sm\@xl { --col-min-width: 9.375rem; }
   .grid-auto-md\@xl { --col-min-width: 15rem; }
