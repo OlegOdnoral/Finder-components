@@ -1,7 +1,7 @@
 <div class="dropdown-container" [ngClass]="disabled ? 'disabled' : '' ">
   <div (click)="toggle()" class="input-shadow">
     <input #origin
-           [formControl]="searchControl"
+           [formControl]="formControl"
            [value]="label"
            class="select-trigger"
            placeholder="Search..">

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from "@angular/forms";
+import { FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
 
   @Output() click: EventEmitter<void> =  new EventEmitter();
 
+  textArea = new FormControl('', [ Validators.required, Validators.min(10) ]);
+
   control = new FormControl();
 
   selected = 'option2';
@@ -22,6 +24,9 @@ export class AppComponent implements OnInit {
   })) as any;
 
   ngOnInit() {
+    this.textArea.markAsTouched()
+    this.textArea.markAsDirty()
+    console.log(this.textArea.valid)
     this.control.valueChanges.subscribe(data => console.log(data));
   }
 

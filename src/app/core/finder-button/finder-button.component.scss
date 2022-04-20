@@ -1,0 +1,68 @@
+.finder-button {
+  min-width: 200px;
+  padding: 18px 21px;
+  border: none;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+
+  &.primary {
+    background-color: #172C33;
+    color: #fff;
+
+    &:hover {
+      background-color: #213C45;
+    }
+    &:active {
+      background-color: #172C33;
+    }
+    &:disabled {
+      background-color: #EDF1F2;
+      color: #AFBCC2;
+    }
+  }
+
+  &.secondary {
+    background-color: #C8B191;
+    color: #fff;
+
+    &:hover {
+      background-color: #D9C3A5;
+    }
+    &:active {
+      background-color: #C8B191;
+    }
+    &:disabled {
+      background-color: #EDF1F2;
+      color: #AFBCC2;
+    }
+  }
+
+  &.tetriary {
+    background-color: #fff;
+    color: #6A7E85;
+    border: 2px solid #D4EBF3;
+
+    &:hover {
+      background-color: #F7FDFF;
+    }
+    &:active {
+      background-color: #EBF6FA;
+    }
+    &:disabled {
+      background-color: #fff;
+      border: 2px solid #EDF1F2;
+      color: #AFBCC2;
+    }
+
+    mat-icon {
+      color: #C8B191;
+    }
+  }
+
+  .button-content {
+    flex-basis: 100%;
+  }
+}

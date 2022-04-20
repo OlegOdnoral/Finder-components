@@ -19,6 +19,8 @@ import { FinderSelectorComponent } from './core/finder-selector/finder-selector.
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { OverlayModule } from "@angular/cdk/overlay";
+import { FinderTextAreaComponent } from './core/finder-text-area/finder-text-area.component';
+import { FinderInputComponent } from './core/finder-input/finder-input.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { OverlayModule } from "@angular/cdk/overlay";
     SecondaryButtonDirective,
     FinderDropdownDirective,
     FinderSelectorComponent,
+    FinderTextAreaComponent,
+    FinderInputComponent,
   ],
   imports: [
     BrowserModule,

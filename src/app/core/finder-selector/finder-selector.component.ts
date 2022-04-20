@@ -29,9 +29,7 @@ import { TemplatePortal } from "@angular/cdk/portal";
 })
 export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
-  value = 0;
-  private onChange = (value: any) => {};
-  private onTouched = () => {};
+
 
   @Input() model: any;
   @Input() labelKey = 'label';
@@ -39,6 +37,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
   @Input() options: any[] = [];
   @Input() disabled = false;
   @Input() optionTpl!: TemplateRef<any>;
+  @Input() formControl = new FormControl();
 
   @Output() selectionChange = new EventEmitter();
   @Output() closed = new EventEmitter();
@@ -47,13 +46,15 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
   @ViewChild('dropdown') dropdown!: TemplateRef<any>
 
   public visibleOptions = 5;
-  public searchControl = new FormControl();
 
   private overlayRef!: OverlayRef;
   private dropdownClosingActionsSub = Subscription.EMPTY;
   private isDropdownOpen = false;
   private originalOptions: any[] = [];
   private destroyed = new Subject();
+  private value!: any;
+  private onChange = (value: any) => {};
+  private onTouched = () => {};
 
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
@@ -76,7 +77,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
       this.model = this.options.find(currentOption => currentOption[this.valueKey] === this.model);
     }
 
-    this.searchControl.valueChanges
+    this.formControl.valueChanges
       .pipe(takeUntil(this.destroyed))
       .subscribe(term => this.search(term));
   }
@@ -140,6 +141,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     this.isDropdownOpen = true;
     this.overlayRef = this.overlay.create({
       width: origin.offsetWidth,
+      scrollStrategy: this.overlay.scrollStrategies.reposition({ scrollThrottle: 3, autoClose: true }),
       positionStrategy: this.overlay
         .position()
         .flexibleConnectedTo(this.elementRef)
@@ -149,8 +151,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
             originY: 'bottom',
             overlayX: 'start',
             overlayY: 'top',
-            offsetY: 8,
-            offsetX: 4
+            offsetY: 12,
           }
         ])
     });

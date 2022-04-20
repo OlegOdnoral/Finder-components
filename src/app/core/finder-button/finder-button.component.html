@@ -1,3 +1,9 @@
-<button mat-button color="primary">Primary</button>
-
-
+<button
+  class="finder-button"
+  [ngClass]="type"
+  [disabled]="disabled">
+  <mat-icon *ngIf="icon" aria-hidden="false">{{icon}}</mat-icon>
+  <div class="button-content">
+    <ng-content></ng-content>
+  </div>
+</button>

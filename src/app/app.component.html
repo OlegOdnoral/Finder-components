@@ -9,100 +9,63 @@
   </div>
 </div>
 
-<!--&lt;!&ndash; finder-main-button &ndash;&gt;-->
-<!--<div class="container">-->
-<!--  <div class="container-row">-->
-<!--    <button-->
-<!--      mat-flat-button-->
-<!--      finder-main-button-->
-<!--      [disabled]="disabled"-->
-<!--      (click)="test(1)"-->
-<!--    >{{ label }}</button>-->
-<!--    <button-->
-<!--      mat-flat-button-->
-<!--      finder-main-button-->
-<!--      [disabled]="!disabled"-->
-<!--      (click)="test(2)"-->
-<!--    >{{ label }}</button>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; finder-primary-button &ndash;&gt;-->
-<!--<div class="container">-->
-<!--  <div class="container-row">-->
-<!--    <button-->
-<!--      mat-flat-button-->
-<!--      finder-primary-button-->
-<!--      [disabled]="disabled"-->
-<!--      (click)="test(1)"-->
-<!--    >-->
-<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-<!--      <span>{{ label }}</span>-->
-<!--    </button>-->
-<!--    <button-->
-<!--      mat-flat-button-->
-<!--      finder-primary-button-->
-<!--      [disabled]="!disabled"-->
-<!--      (click)="test(2)"-->
-<!--    >-->
-<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-<!--      <span>{{ label }}</span>-->
-<!--    </button>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; finder-secondary-button &ndash;&gt;-->
-<!--<div class="container">-->
-<!--  <div class="container-row">-->
-<!--    <button-->
-<!--      mat-flat-button-->
-<!--      finder-secondary-button-->
-<!--      [disabled]="disabled"-->
-<!--      (click)="test(1)"-->
-<!--    >-->
-<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-<!--      <span>{{ label }}</span>-->
-<!--    </button>-->
-<!--    <button-->
-<!--      mat-flat-button-->
-<!--      finder-secondary-button-->
-<!--      [disabled]="!disabled"-->
-<!--      (click)="test(2)"-->
-<!--    >-->
-<!--      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
-<!--      <span>{{ label }}</span>-->
-<!--    </button>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--<div class="container">-->
-<!--  <div class="container-row">-->
-<!--    <mat-form-field appearance="fill">-->
-<!--      <mat-label>Select an option</mat-label>-->
-<!--      <mat-select [(value)]="selected" disableOptionCentering>-->
-<!--        <mat-option>None</mat-option>-->
-<!--        <mat-option value="option1">Option 1</mat-option>-->
-<!--        <mat-option value="option2">Option 2</mat-option>-->
-<!--        <mat-option value="option3">Option 3</mat-option>-->
-<!--      </mat-select>-->
-<!--    </mat-form-field>-->
-
-<!--    <h4>Basic native select</h4>-->
-<!--    <mat-form-field appearance="fill">-->
-<!--      <mat-label>Cars</mat-label>-->
-<!--      <select matNativeControl required>-->
-<!--        <option value="volvo">Volvo</option>-->
-<!--        <option value="saab">Saab</option>-->
-<!--        <option value="mercedes">Mercedes</option>-->
-<!--        <option value="audi">Audi</option>-->
-<!--      </select>-->
-<!--    </mat-form-field>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="container">
+  <div class="container-row">
+    <app-finder-button type="primary">
+      {{ label }}
+    </app-finder-button>
+    <app-finder-button type="secondary">
+      {{ label }}
+    </app-finder-button>
+    <app-finder-button type="tetriary">
+      {{ label }}
+    </app-finder-button>
+  </div>
+</div>
 
 <div class="container">
   <div class="container-row">
-    <button (click)="selector.toggle()">LOL</button>
+    <app-finder-button [icon]="'home'" type="primary">
+      <div>{{ label }}</div>
+    </app-finder-button>
+
+    <app-finder-button [icon]="'home'" type="secondary">
+      <div>{{ label }}</div>
+    </app-finder-button>
+
+    <app-finder-button [icon]="'home'" type="tetriary">
+      <div>{{ label }}</div>
+    </app-finder-button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
+    <app-finder-button [disabled]="!disabled" type="primary">
+      {{ label }}
+    </app-finder-button>
+    <app-finder-button [disabled]="!disabled" type="secondary">
+      {{ label }}
+    </app-finder-button>
+    <app-finder-button [disabled]="!disabled" type="tetriary">
+      {{ label }}
+    </app-finder-button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
+    <app-finder-text-area [disabled]="true" [placeholder]="'Search'"></app-finder-text-area>
+
+    <app-finder-text-area [placeholder]="'Text'" [maxLength]="200"></app-finder-text-area>
+
+    <app-finder-text-area [formControl]="textArea" [placeholder]="'Text'" [maxLength]="200"></app-finder-text-area>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
+    <button (click)="selector.toggle()">Toggle</button>
     <finder-selector #selector [formControl]="control" [options]="items"></finder-selector>
   </div>
 </div>
