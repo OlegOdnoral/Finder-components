@@ -29,8 +29,6 @@ import { TemplatePortal } from "@angular/cdk/portal";
 })
 export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
-
-
   @Input() model: any;
   @Input() labelKey = 'label';
   @Input() valueKey = 'id';
@@ -141,10 +139,10 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     this.isDropdownOpen = true;
     this.overlayRef = this.overlay.create({
       width: origin.offsetWidth,
-      scrollStrategy: this.overlay.scrollStrategies.reposition({ scrollThrottle: 3, autoClose: true }),
+      scrollStrategy: this.overlay.scrollStrategies.reposition({ scrollThrottle: 0, autoClose: true }),
       positionStrategy: this.overlay
         .position()
-        .flexibleConnectedTo(this.elementRef)
+        .flexibleConnectedTo(origin)
         .withPositions([
           {
             originX: 'start',

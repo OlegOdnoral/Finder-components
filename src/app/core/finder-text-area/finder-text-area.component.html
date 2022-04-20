@@ -1,10 +1,10 @@
 <div class="textarea-wrapper">
   <textarea
     [readonly]="disabled"
-    [ngClass]="formControl.valid ? '' : 'error'"
     [maxlength]="maxLength"
     [formControl]="formControl"
     [placeholder]="placeholder"
+    [ngClass]="formControl.valid ? '' : 'error'"
   ></textarea>
   <div *ngIf="maxLength" class="textarea-counter" >{{ currentLength }}/{{ maxLength }}</div>
 </div>

@@ -1,6 +1,11 @@
 .textarea-wrapper {
   color: #AFBCC2;
 
+  * {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+  }
+
   textarea {
     color: #6A7E85;
     height: 116px;
@@ -8,6 +13,7 @@
     display: block;
     border: 1px solid #E4EBED;
     border-radius: 5px;
+    padding: 16px;
 
     &::placeholder {
       color: #AFBCC2;
@@ -41,7 +47,7 @@
   .textarea-counter {
     position: relative;
     left: -10px;
-    top: -20px;
+    top: -25px;
     float: right;
     height: 0;
   }
