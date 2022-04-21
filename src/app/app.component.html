@@ -1,5 +1,12 @@
 <div class="container">
   <div class="container-row">
+    <button (click)="selector.toggle()">Toggle</button>
+    <finder-selector #selector [formControl]="control" [options]="items"></finder-selector>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
     <app-finder-main-button [disabled]="disabled">
       {{ label }}
     </app-finder-main-button>
@@ -65,13 +72,15 @@
 
 <div class="container">
   <div class="container-row">
-    <button (click)="selector.toggle()">Toggle</button>
-    <finder-selector #selector [formControl]="control" [options]="items"></finder-selector>
+    <app-finder-input [type]="'text'" [disabled]="true" [placeholder]="'Search'"></app-finder-input>
+
+    <app-finder-input [type]="'text'" [placeholder]="'Search'"></app-finder-input>
+
+    <app-finder-input [type]="'text'" [formControl]="textBox" [placeholder]="'Search'"></app-finder-input>
   </div>
 </div>
 
-
-
+<hr>
 <div class="cells-container">
   <div><span>A</span></div>
   <div><span>A</span></div>

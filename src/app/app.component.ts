@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
 
   textArea = new FormControl('', [ Validators.required, Validators.min(10) ]);
 
+  textBox = new FormControl('', [ Validators.required, Validators.min(10) ]);
+
   control = new FormControl();
 
   selected = 'option2';
@@ -26,7 +28,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.textArea.markAsTouched()
     this.textArea.markAsDirty()
-    console.log(this.textArea.valid)
+
+    this.textBox.markAsTouched()
+    this.textBox.markAsDirty()
     this.control.valueChanges.subscribe(data => console.log(data));
   }
 
