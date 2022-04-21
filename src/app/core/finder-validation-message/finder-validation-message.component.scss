@@ -1,0 +1,50 @@
+.message-wrapper {
+  gap: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.info {
+    .dot {
+      background-color: #E4EBED;
+    }
+    .text {
+      color: #AFBCC2;
+    }
+  }
+
+  &.success {
+    .dot {
+      background-color: #96CD7C;
+    }
+    .text {
+      color: #96CD7C;
+    }
+  }
+
+  &.waring {
+    .dot {
+      background-color: #F5A04B;
+    }
+    .text {
+      color: #F5A04B;
+    }
+  }
+
+  &.error {
+    .dot {
+      background-color: #E8626D;
+    }
+    .text {
+      color: #E8626D;
+    }
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+  }
+}

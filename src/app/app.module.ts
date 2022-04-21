@@ -21,6 +21,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
 import { OverlayModule } from "@angular/cdk/overlay";
 import { FinderTextAreaComponent } from './core/finder-text-area/finder-text-area.component';
 import { FinderInputComponent } from './core/finder-input/finder-input.component';
+import { FinderValidationMessageComponent } from './core/finder-validation-message/finder-validation-message.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FinderInputComponent } from './core/finder-input/finder-input.component
     FinderSelectorComponent,
     FinderTextAreaComponent,
     FinderInputComponent,
+    FinderValidationMessageComponent,
   ],
   imports: [
     BrowserModule,
