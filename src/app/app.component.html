@@ -1,5 +1,29 @@
 <div class="container">
   <div class="container-row">
+
+    <mat-radio-group aria-label="Select an option">
+      <app-finder-radio value="1">Option 1</app-finder-radio>
+      <app-finder-radio value="2">Option 2</app-finder-radio>
+      <app-finder-radio value="2" [checked]="true" [disabled]="true" >Option 3</app-finder-radio>
+    </mat-radio-group>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
+
+    <app-finder-checkbox [checked]="false" [disabled]="true">Test</app-finder-checkbox>
+
+    <app-finder-checkbox [checked]="true" [disabled]="true">Test</app-finder-checkbox>
+
+    <app-finder-checkbox>Test</app-finder-checkbox>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
     <button (click)="selector.toggle()">Toggle</button>
     <finder-selector #selector [formControl]="control" [options]="items"></finder-selector>
   </div>

@@ -1,0 +1,17 @@
+<div class="finder-radio-button">
+  <mat-radio-button
+    [aria-describedby]="ariaDescribedby"
+    [aria-label]="ariaLabel"
+    [aria-labelledby]="ariaLabelledby"
+    [checked]="checked"
+    [disableRipple]="disableRipple"
+    [disabled]="disabled"
+    [labelPosition]="labelPosition"
+    [name]="name"
+    [required]="required"
+    [value]="value"
+    (change)="change.emit($event)"
+  >
+    <ng-content></ng-content>
+  </mat-radio-button>
+</div>

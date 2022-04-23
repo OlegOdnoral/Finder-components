@@ -22,6 +22,10 @@ import { OverlayModule } from "@angular/cdk/overlay";
 import { FinderTextAreaComponent } from './core/finder-text-area/finder-text-area.component';
 import { FinderInputComponent } from './core/finder-input/finder-input.component';
 import { FinderValidationMessageComponent } from './core/finder-validation-message/finder-validation-message.component';
+import { FinderRadioComponent } from './core/finder-radio/finder-radio.component';
+import { FinderCheckboxComponent } from './core/finder-checkbox/finder-checkbox.component';
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatRadioModule } from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -37,11 +41,15 @@ import { FinderValidationMessageComponent } from './core/finder-validation-messa
     FinderTextAreaComponent,
     FinderInputComponent,
     FinderValidationMessageComponent,
+    FinderRadioComponent,
+    FinderCheckboxComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
 
+    MatRadioModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,

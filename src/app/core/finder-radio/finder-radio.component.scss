@@ -1,0 +1,17 @@
+.finder-radio-button {
+  display: inline-block;
+
+  .mat-radio-outer-circle {
+    border: 1px solid #BDC7C9 !important;
+  }
+  .mat-radio-inner-circle {
+    background-color: #96CD7C !important;
+  }
+  .mat-radio-ripple .mat-ripple-element {
+    background-color: #96CD7C !important;
+  }
+
+  .mat-radio-disabled.mat-radio-checked .mat-radio-inner-circle{
+    background-color: #EDF1F2 !important;
+  }
+}
