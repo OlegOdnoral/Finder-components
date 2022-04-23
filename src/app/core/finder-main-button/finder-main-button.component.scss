@@ -21,5 +21,6 @@
   &:disabled {
     color: var(--uikit-text-inactive);
     background-color: var(--uikit-nav-background);
+    border-bottom: 5px transparent solid;
   }
 }
