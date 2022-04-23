@@ -12,7 +12,7 @@
     [required]="required"
     [value]="value"
     (change)="change.emit($event)"
-    (indeterminateChange)="indeterminateChange.emit($event)">
+    (indeterminateChange)="indeterminateChange?.emit($event)">
     <ng-content></ng-content>
   </mat-checkbox>
 </div>

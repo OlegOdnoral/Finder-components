@@ -1,6 +1,17 @@
 <div class="container">
   <div class="container-row">
 
+    <button appFButton appFinderPrimary [appFinderPrimaryVal]="kek" (click)="sms()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      <div>Test</div>
+    </button>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-row">
+
     <mat-radio-group aria-label="Select an option">
       <app-finder-radio value="1">Option 1</app-finder-radio>
       <app-finder-radio value="2">Option 2</app-finder-radio>

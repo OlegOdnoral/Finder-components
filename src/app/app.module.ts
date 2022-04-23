@@ -26,6 +26,8 @@ import { FinderRadioComponent } from './core/finder-radio/finder-radio.component
 import { FinderCheckboxComponent } from './core/finder-checkbox/finder-checkbox.component';
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
+import { FinderPrimaryDirective } from './core/finder-button/directives/finder-primary.directive';
+import { FButtonDirective } from './core/finder-button/directives/f-button.directive';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { MatRadioModule } from "@angular/material/radio";
     FinderValidationMessageComponent,
     FinderRadioComponent,
     FinderCheckboxComponent,
+    FinderPrimaryDirective,
+    FButtonDirective,
   ],
   imports: [
     BrowserModule,

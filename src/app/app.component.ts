@@ -34,6 +34,11 @@ export class AppComponent implements OnInit {
     this.control.valueChanges.subscribe(data => console.log(data));
   }
 
+  kek = 100;
+  sms() {
+    this.kek = this.kek + 1;
+  }
+
   change($event: any) {
     console.log($event)
   }

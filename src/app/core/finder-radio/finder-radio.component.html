@@ -10,7 +10,7 @@
     [name]="name"
     [required]="required"
     [value]="value"
-    (change)="change.emit($event)"
+    (change)="change?.emit($event)"
   >
     <ng-content></ng-content>
   </mat-radio-button>
