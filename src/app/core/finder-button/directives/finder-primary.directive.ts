@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: 'button[appFButton][appFinderPrimary]',
+  selector: '[appFinderPrimary]',
 })
 export class FinderPrimaryDirective implements OnInit {
 

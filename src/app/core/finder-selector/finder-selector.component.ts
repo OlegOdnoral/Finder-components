@@ -3,17 +3,17 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
-  EventEmitter, forwardRef, HostBinding, HostListener,
+  EventEmitter, forwardRef, Host, HostBinding, HostListener,
   Input,
   OnDestroy,
-  OnInit,
+  OnInit, Optional,
   Output,
   TemplateRef, ViewChild,
   ViewContainerRef
 } from '@angular/core';
 import { debounceTime, merge, Observable, Subject, Subscription, takeUntil } from "rxjs";
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { Overlay, OverlayRef } from "@angular/cdk/overlay";
+import { CdkScrollable, Overlay, OverlayRef } from "@angular/cdk/overlay";
 import { TemplatePortal } from "@angular/cdk/portal";
 
 @Component({
@@ -59,6 +59,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     private changeDetectorRef: ChangeDetectorRef,
     private elementRef: ElementRef<HTMLElement>,
     private overlay: Overlay,
+    @Optional() @Host() private scrollContainer: CdkScrollable
   ) {}
 
   get isOpen(): boolean {
@@ -143,6 +144,10 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
       positionStrategy: this.overlay
         .position()
         .flexibleConnectedTo(origin)
+        .setOrigin(origin)
+        .withScrollableContainers([this.scrollContainer])
+        .withFlexibleDimensions(false)
+        .withPush(false)
         .withPositions([
           {
             originX: 'start',
