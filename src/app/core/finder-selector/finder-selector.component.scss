@@ -4,6 +4,8 @@
   }
 }
 
+$default-font: 'Nunito Sans', sans-serif;
+
 .dropdown-container {
 
   &.disabled {
@@ -66,7 +68,7 @@
       box-sizing: border-box;
       border-radius: 5px;
       color: var(--uikit-text-secondary);
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: $default-font;
       font-style: normal;
       font-size: 16px;
       line-height: 150%;
@@ -81,7 +83,7 @@
 
       &::placeholder {
         color: var(--uikit-text-secondary);
-        font-family: 'Nunito Sans', sans-serif;
+        font-family: $default-font;
         font-style: normal;
         font-size: 16px;
         line-height: 150%;
@@ -133,26 +135,22 @@
       align-items: center;
       padding: 11px 13px;
       cursor: pointer;
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: $default-font;
       font-style: normal;
       font-size: 16px;
       line-height: 150%;
       color: var(--uikit-text-secondary);
-
       &:hover,
       &.active {
         background-color: #FAF7F2;
-        color: #3D484C;
+        color: var(--uikit-text-main);
       }
-
       &:first-child {
         margin-top: 12px;
       }
-
       &:not(:last-child) {
         margin-bottom: 8px;
       }
-
       &:last-child {
         margin-bottom: 12px;
       }
@@ -164,7 +162,7 @@
       align-items: center;
       padding: 11px 13px;
       cursor: pointer;
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: $default-font;
       font-style: normal;
       font-size: 16px;
       line-height: 150%;

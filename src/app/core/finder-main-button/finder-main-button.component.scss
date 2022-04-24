@@ -4,23 +4,23 @@
   font-family: 'Nunito Sans', sans-serif;
   font-weight: bold;
   color: var(--uikit-text-secondary);
-  background-color: var(--uikit-nav-background);
+  background-color: var(--uikit-secondary-nav-background);
   border-bottom: 5px transparent solid;
 
   &:hover {
     color: var(--uikit-text-main);
-    background-color: var(--uikit-buttons-bg);
+    background-color: var(--uikit-secondary-buttons);
   }
 
   &:active {
-    background-color: var(--uikit-buttons-bg);
-    border-bottom: 5px #172C33 solid;
+    background-color: var(--uikit-secondary-buttons);
+    border-bottom: 5px var(--uikit-primary-main) solid;
     border-radius: 5px;
   }
 
   &:disabled {
     color: var(--uikit-text-inactive);
-    background-color: var(--uikit-nav-background);
+    background-color: var(--uikit-secondary-nav-background);
     border-bottom: 5px transparent solid;
   }
 }

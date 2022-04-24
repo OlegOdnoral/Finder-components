@@ -28,11 +28,11 @@
 <div class="container">
   <div class="container-row">
 
-    <app-finder-checkbox [checked]="false" [disabled]="true">Test</app-finder-checkbox>
+    <uikit-finder-checkbox [checked]="false" [disabled]="true">Test</uikit-finder-checkbox>
 
-    <app-finder-checkbox [checked]="true" [disabled]="true">Test</app-finder-checkbox>
+    <uikit-finder-checkbox [checked]="true" [disabled]="true">Test</uikit-finder-checkbox>
 
-    <app-finder-checkbox>Test</app-finder-checkbox>
+    <uikit-finder-checkbox>Test</uikit-finder-checkbox>
 
   </div>
 </div>
@@ -87,13 +87,13 @@
 
 <div class="container">
   <div class="container-row">
-    <app-finder-button [disabled]="!disabled" type="primary">
+    <app-finder-button [disabled]="!disabled" [icon]="'home'" type="primary">
       {{ label }}
     </app-finder-button>
-    <app-finder-button [disabled]="!disabled" type="secondary">
+    <app-finder-button [disabled]="!disabled" [icon]="'home'" type="secondary">
       {{ label }}
     </app-finder-button>
-    <app-finder-button [disabled]="!disabled" type="tetriary">
+    <app-finder-button [disabled]="!disabled" [icon]="'home'" type="tetriary">
       {{ label }}
     </app-finder-button>
   </div>
@@ -121,13 +121,21 @@
 
 <div class="container">
   <div class="container-row">
-    <app-finder-validation-message [type]="'info'" ></app-finder-validation-message>
+    <app-finder-validation-message [type]="'info'" >
+      <span>Min of 6 characters, with upper and lowercase.</span>
+    </app-finder-validation-message>
 
-    <app-finder-validation-message [type]="'success'"></app-finder-validation-message>
+    <app-finder-validation-message [type]="'success'">
+      <span>Min of 6 characters, with upper and lowercase.</span>
+    </app-finder-validation-message>
 
-    <app-finder-validation-message [type]="'waring'"></app-finder-validation-message>
+    <app-finder-validation-message [type]="'waring'">
+      <span>Min of 6 characters, with upper and lowercase.</span>
+    </app-finder-validation-message>
 
-    <app-finder-validation-message [type]="'error'"></app-finder-validation-message>
+    <app-finder-validation-message [type]="'error'">
+      <span>Min of 6 characters, with upper and lowercase.</span>
+    </app-finder-validation-message>
   </div>
 </div>
 

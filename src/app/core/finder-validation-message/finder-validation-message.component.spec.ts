@@ -8,9 +8,9 @@ describe('FinderValidationMessageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FinderValidationMessageComponent ]
-    })
-    .compileComponents();
+        declarations: [ FinderValidationMessageComponent ]
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,18 +1,22 @@
+$uikit-default-font: 'Nunito Sans', sans-serif;
+
 :root {
   --uikit-text-main: #3D484C;
   --uikit-text-secondary: #6A7E85;
-  --uikit-text-inactive: #B8BFC2;
+  --uikit-text-inactive: #AFBCC2;
+  --uikit-white: #FFFFFF;
 
-  --uikit-primary: #172C33;
+  --uikit-primary-main: #172C33;
   --uikit-primary-hover: #213C45;
 
-  --uikit-secondary-main: #C8B191;
-  --uikit-secondary-hover: #D9C3A5;
-  --uikit-secondary-shade: #FAF7F2;
+  --uikit-secondary-main: #96CEE0;
+  --uikit-secondary-nav-background: #D4EBF3;
+  --uikit-secondary-buttons: #EBF6FA;
+  --uikit-secondary-hover: #F7FDFF;
 
-  --uikit-nav-background: #D4EBF3;
-  --uikit-buttons-bg: #EBF6FA;
-  --uikit-buttons-bg-hover: #F7FDFF;
+  --uikit-tertiary-main: #C8B191;
+  --uikit-tertiary-hover: #D9C3A5;
+  --uikit-tertiary-shade: #FAF7F2;
 
   --uikit-succcess: #96CD7C;
   --uikit-succcess-shade: #CAE6BD;
@@ -20,19 +24,18 @@
 
   --uikit-warning: #E8626D;
   --uikit-warning-shade: #F7CBCE;
-  --uikit-warning-transparent: #FAE8EA;
+  --uikit-warning-transparent: #FAF2F3;
 
   --uikit-notification: #F5A04B;
   --uikit-notification-shade: #FFDEBD;
-  --uikit-notification-transparent: #FFF2E5;
+  --uikit-notification-transparent: #FFF2E6;
 
   --uikit-bg-main: #F7F9FA;
-  --uikit-bg-secondary: #D4EBF3;
+  --uikit-bg-secondary: #FFFFFF;
 
   --uikit-gray-shades-dark: #818A8C;
-  --uikit-gray-shades-fill: #9AAAAF;
-  --uikit-gray-shades-stroke: #DCE3E5;
+  --uikit-gray-shades-fill: #BDC7C9;
+  --uikit-gray-shades-stroke: #E4EBED;
   --uikit-gray-shades-inactive: #EDF1F2;
-  --uikit-gray-shades-light: #FCFDFD;
-
+  --uikit-gray-shades-light: #FCFEFF;
 }

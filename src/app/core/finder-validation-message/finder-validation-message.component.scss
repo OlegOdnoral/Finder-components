@@ -8,37 +8,41 @@
 
   &.info {
     .dot {
-      background-color: #E4EBED;
+      background-color: var(--uikit-gray-shades-stroke);
     }
+
     .text {
-      color: #AFBCC2;
+      color: var(--uikit-text-inactive);
     }
   }
 
   &.success {
     .dot {
-      background-color: #96CD7C;
+      background-color: var(--uikit-succcess);
     }
+
     .text {
-      color: #96CD7C;
+      color: var(--uikit-succcess);
     }
   }
 
   &.waring {
     .dot {
-      background-color: #F5A04B;
+      background-color: var(--uikit-notification);
     }
+
     .text {
-      color: #F5A04B;
+      color: var(--uikit-notification);
     }
   }
 
   &.error {
     .dot {
-      background-color: #E8626D;
+      background-color: var(--uikit-warning);
     }
+
     .text {
-      color: #E8626D;
+      color: var(--uikit-warning);
     }
   }
 

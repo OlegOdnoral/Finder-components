@@ -8,9 +8,9 @@ describe('FinderTextAreaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FinderTextAreaComponent ]
-    })
-    .compileComponents();
+        declarations: [ FinderTextAreaComponent ]
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {

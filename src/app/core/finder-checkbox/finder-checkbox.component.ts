@@ -11,7 +11,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { MatCheckboxChange } from "@angular/material/checkbox";
 
 @Component({
-  selector: 'app-finder-checkbox',
+  selector: 'uikit-finder-checkbox',
   templateUrl: './finder-checkbox.component.html',
   styleUrls: ['./finder-checkbox.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

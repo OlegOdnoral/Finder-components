@@ -8,9 +8,9 @@ describe('FinderButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FinderButtonComponent ]
-    })
-    .compileComponents();
+        declarations: [ FinderButtonComponent ]
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {

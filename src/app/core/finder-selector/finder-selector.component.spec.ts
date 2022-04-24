@@ -8,9 +8,9 @@ describe('FinderSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FinderSelectorComponent ]
-    })
-    .compileComponents();
+        declarations: [ FinderSelectorComponent ]
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {

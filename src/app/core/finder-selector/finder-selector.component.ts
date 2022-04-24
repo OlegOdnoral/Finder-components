@@ -21,11 +21,11 @@ import { TemplatePortal } from "@angular/cdk/portal";
   templateUrl: './finder-selector.component.html',
   styleUrls: [ './finder-selector.component.scss' ],
   changeDetection: ChangeDetectionStrategy.Default,
-  providers: [{
+  providers: [ {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => FinderSelectorComponent),
     multi: true
-  }]
+  } ]
 })
 export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
@@ -145,7 +145,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
         .position()
         .flexibleConnectedTo(origin)
         .setOrigin(origin)
-        .withScrollableContainers([this.scrollContainer])
+        .withScrollableContainers([ this.scrollContainer ])
         .withFlexibleDimensions(false)
         .withPush(false)
         .withPositions([
@@ -166,7 +166,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     this.overlayRef.attach(templatePortal);
 
     this.dropdownClosingActionsSub = this.dropdownClosingActions()
-      .subscribe(() =>  this.close());
+      .subscribe(() => this.close());
 
     this.changeDetectorRef.markForCheck();
   }
@@ -190,4 +190,4 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     this.changeDetectorRef.markForCheck();
   }
 
-  }
+}

@@ -8,9 +8,9 @@ describe('FinderInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FinderInputComponent ]
-    })
-    .compileComponents();
+        declarations: [ FinderInputComponent ]
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -3,11 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FinderButtonComponent } from './core/finder-button/finder-button.component';
-import { FinderMainButtonComponent } from './core/finder-main-button/finder-main-button.component';
 import { FinderTabsComponent } from './core/finder-tabs/finder-tabs.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSelectModule } from "@angular/material/select";
 import { MainButtonDirective } from './directives/main-button/main-button.directive';
@@ -19,43 +15,48 @@ import { FinderSelectorComponent } from './core/finder-selector/finder-selector.
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { OverlayModule } from "@angular/cdk/overlay";
-import { FinderTextAreaComponent } from './core/finder-text-area/finder-text-area.component';
-import { FinderInputComponent } from './core/finder-input/finder-input.component';
-import { FinderValidationMessageComponent } from './core/finder-validation-message/finder-validation-message.component';
 import { FinderRadioComponent } from './core/finder-radio/finder-radio.component';
-import { FinderCheckboxComponent } from './core/finder-checkbox/finder-checkbox.component';
-import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
 import { FinderPrimaryDirective } from './core/finder-button/directives/finder-primary.directive';
 import { FButtonDirective } from './core/finder-button/directives/f-button.directive';
+import { FinderButtonModule } from "./core/finder-button/finder-button.module";
+import { FinderCheckboxModule } from "./core/finder-checkbox/finder-checkbox.module";
+import { FinderMainButtonModule } from "./core/finder-main-button/finder-main-button.module";
+import { FinderInputModule } from "./core/finder-input/finder-input.module";
+import { FinderTextAreaModule } from "./core/finder-text-area/finder-text-area.module";
+import { FinderValidationMessageModule } from "./core/finder-validation-message/finder-validation-message.module";
+import { FinderSelectorModule } from "./core/finder-selector/finder-selector.module";
+import { FinderRadioModule } from "./core/finder-radio/finder-radio.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    FinderButtonComponent,
-    FinderMainButtonComponent,
+
     FinderTabsComponent,
     MainButtonDirective,
     FinderPrimaryButtonDirective,
     SecondaryButtonDirective,
     FinderDropdownDirective,
-    FinderSelectorComponent,
-    FinderTextAreaComponent,
-    FinderInputComponent,
-    FinderValidationMessageComponent,
-    FinderRadioComponent,
-    FinderCheckboxComponent,
-    FinderPrimaryDirective,
     FButtonDirective,
+    FinderPrimaryDirective,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
 
+    FinderButtonModule,
+    FinderCheckboxModule,
+    FinderMainButtonModule,
+    FinderInputModule,
+    FinderTextAreaModule,
+    FinderValidationMessageModule,
+    FinderSelectorModule,
+    FinderRadioModule,
+
     MatRadioModule,
-    MatCheckboxModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
+    // BrowserAnimationsModule,
+    // MatButtonModule,
     MatIconModule,
     MatSelectModule,
     MatInputModule,

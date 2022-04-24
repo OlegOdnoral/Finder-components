@@ -1,17 +1,29 @@
 .finder-radio-button {
   display: inline-block;
 
-  .mat-radio-outer-circle {
-    border: 1px solid #BDC7C9 !important;
-  }
-  .mat-radio-inner-circle {
-    background-color: #96CD7C !important;
-  }
-  .mat-radio-ripple .mat-ripple-element {
-    background-color: #96CD7C !important;
+  &:hover {
+    .mat-radio-inner-circle {
+      background-color: var(--uikit-secondary-nav-background) !important;
+    }
+
+    .mat-radio-outer-circle {
+      border: 1px solid var(--uikit-gray-shades-stroke) !important;
+    }
   }
 
-  .mat-radio-disabled.mat-radio-checked .mat-radio-inner-circle{
-    background-color: #EDF1F2 !important;
+  .mat-radio-outer-circle {
+    border: 1px solid var(--uikit-gray-shades-fill) !important;
+  }
+
+  .mat-radio-inner-circle {
+    background-color: var(--uikit-secondary-main) !important;
+  }
+
+  .mat-radio-ripple .mat-ripple-element {
+    background-color: var(--uikit-secondary-main) !important;
+  }
+
+  .mat-radio-disabled.mat-radio-checked .mat-radio-inner-circle {
+    background-color: var(--uikit-gray-shades-inactive) !important;
   }
 }

@@ -5,13 +5,13 @@ import { Subject, takeUntil } from "rxjs";
 @Component({
   selector: 'app-finder-text-area',
   templateUrl: './finder-text-area.component.html',
-  styleUrls: ['./finder-text-area.component.scss'],
+  styleUrls: [ './finder-text-area.component.scss' ],
   changeDetection: ChangeDetectionStrategy.Default,
-  providers: [{
+  providers: [ {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => FinderTextAreaComponent),
     multi: true
-  }]
+  } ]
 })
 export class FinderTextAreaComponent implements ControlValueAccessor, OnInit, OnDestroy {
 

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 @Component({
   selector: 'app-finder-button',
   templateUrl: './finder-button.component.html',
-  styleUrls: ['./finder-button.component.scss'],
+  styleUrls: [ './finder-button.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FinderButtonComponent {

@@ -1,4 +1,6 @@
 <div class="message-wrapper" [ngClass]="type">
   <div class="dot"></div>
-  <div class="text">Min of 6 characters, with upper and lowercase.</div>
+  <div class="text">
+    <ng-content></ng-content>
+  </div>
 </div>

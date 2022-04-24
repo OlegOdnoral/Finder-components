@@ -29,13 +29,13 @@ export enum InputType {
 @Component({
   selector: 'app-finder-input',
   templateUrl: './finder-input.component.html',
-  styleUrls: ['./finder-input.component.scss'],
+  styleUrls: [ './finder-input.component.scss' ],
   changeDetection: ChangeDetectionStrategy.Default,
-  providers: [{
+  providers: [ {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => FinderInputComponent),
     multi: true
-  }]
+  } ]
 })
 export class FinderInputComponent implements ControlValueAccessor {
 

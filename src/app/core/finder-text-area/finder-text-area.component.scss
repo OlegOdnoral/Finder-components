@@ -1,5 +1,5 @@
 .textarea-wrapper {
-  color: #AFBCC2;
+  color: var(--uikit-text-secondary);
 
   * {
     font-family: 'Nunito Sans', sans-serif;
@@ -7,31 +7,31 @@
   }
 
   textarea {
-    color: #6A7E85;
     height: 116px;
     width: 288px;
     display: block;
-    border: 1px solid #E4EBED;
     border-radius: 5px;
     padding: 16px;
+    color: var(--uikit-text-secondary);
+    border: 1px solid var(--uikit-gray-shades-stroke);
 
     &::placeholder {
-      color: #AFBCC2;
+      color: var(--uikit-text-inactive);
     }
 
     &:hover {
-      box-shadow: 0 0 10px #E2CCB0FF;
+      box-shadow: 0 0 10px var(--uikit-tertiary-hover);
     }
 
     &:focus {
       outline: none !important;
-      border-color: #D9C3A5;
-      box-shadow: 0 0 10px #D9C3A5;
+      border-color: var(--uikit-tertiary-shade);
+      box-shadow: 0 0 10px var(--uikit-tertiary-hover);
     }
 
     &:read-only {
-      background: #F7F9FA;
-      border: 1px solid #E4EBED;
+      background: var(--uikit-bg-main);
+      border: 1px solid var(--uikit-gray-shades-stroke);
       box-shadow: none;
       cursor: default;
       pointer-events: none;
@@ -39,7 +39,7 @@
     }
 
     &.error {
-      border: 1px solid #E8626D;
+      border: 1px solid var(--uikit-warning);
       box-shadow: none;
     }
   }

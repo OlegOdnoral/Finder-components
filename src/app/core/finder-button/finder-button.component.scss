@@ -9,70 +9,88 @@
   display: flex;
   align-items: center;
 
+  mat-icon {
+    color: var(--uikit-secondary-main);
+    height: 18px;
+    width: 18px;
+    font-size: 18px;
+  }
+
+  &:disabled {
+    mat-icon {
+      color: var(--uikit-gray-shades-fill) !important;
+    }
+  }
+
   &.primary {
-    background-color: #172C33;
-    color: #fff;
+    background-color: var(--uikit-primary-main);
+    color: var(--uikit-white);
+
 
     &:hover {
-      background-color: #213C45;
+      background-color: var(--uikit-primary-hover);
     }
+
     &:active {
-      background-color: #172C33;
+      background-color: var(--uikit-primary-main);
     }
+
     &:disabled {
-      background-color: #EDF1F2;
-      color: #AFBCC2;
+      background-color: var(--uikit-gray-shades-inactive);
+      color: var(--uikit-text-inactive);
     }
   }
 
   &.secondary {
-    background-color: #C8B191;
-    color: #fff;
+    background-color: var(--uikit-secondary-buttons);
+    color: var(--uikit-text-main);
 
     &:hover {
-      background-color: #D9C3A5;
+      background-color: var(--uikit-secondary-main);
+      color: var(--uikit-white);
+
+      mat-icon {
+        color: var(--uikit-white);
+      }
     }
+
     &:active {
-      background-color: #C8B191;
+      background-color: var(--uikit-secondary-buttons);
+      color: var(--uikit-text-main);
     }
+
     &:disabled {
-      background-color: #EDF1F2;
-      color: #AFBCC2;
+      background-color: var(--uikit-gray-shades-inactive);
+      color: var(--uikit-text-inactive);
     }
   }
 
   &.tetriary {
-    background-color: #fff;
-    color: #6A7E85;
-    border: 2px solid #D4EBF3;
+    background-color: var(--uikit-white);
+    color: var(--uikit-text-secondary);
+    border: 2px solid var(--uikit-gray-shades-stroke);
 
     &:hover {
-      background-color: #F7FDFF;
+      color: var(--uikit-text-main);
+      border: 2px solid var(--uikit-secondary-main);
     }
+
     &:active {
-      background-color: #EBF6FA;
+      color: var(--uikit-text-secondary);
+      border: 2px solid var(--uikit-secondary-nav-background);
     }
+
     &:disabled {
-      background-color: #fff;
-      border: 2px solid #EDF1F2;
-      color: #AFBCC2;
+      border: 2px solid var(--uikit-gray-shades-inactive);
+      color: var(--uikit-text-inactive);
     }
-
-    mat-icon {
-      color: #C8B191;
-    }
-  }
-
-  mat-icon {
-    height: 18px;
-    width: 18px;
-    font-size: 18px;
   }
 
   .button-content {
     flex-basis: 100%;
   }
 }
+
 .finder-button.tetriary {
   padding: 16px 21px;
 }

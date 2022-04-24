@@ -13,14 +13,14 @@ import { MatRadioChange } from "@angular/material/radio";
 @Component({
   selector: 'app-finder-radio',
   templateUrl: './finder-radio.component.html',
-  styleUrls: ['./finder-radio.component.scss'],
+  styleUrls: [ './finder-radio.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  providers: [{
+  providers: [ {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => FinderRadioComponent),
     multi: true
-  }]
+  } ]
 })
 export class FinderRadioComponent implements ControlValueAccessor {
 
