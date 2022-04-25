@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,11 @@ export class AppComponent implements OnInit {
 
   textBox = new FormControl('', [ Validators.required, Validators.min(10) ]);
 
-  control = new FormControl();
+  textBoxS = new FormControl('', [ Validators.minLength(10) ]);
+
+  form = new FormGroup({ 'textBoxS': this.textBoxS })
+
+  control = new FormControl(null, [ Validators.minLength(10) ]);
 
   selected = 'option2';
 
@@ -26,12 +30,14 @@ export class AppComponent implements OnInit {
   })) as any;
 
   ngOnInit() {
-    this.textArea.markAsTouched()
-    this.textArea.markAsDirty()
+    // this.textArea.markAsTouched()
+    // this.textArea.markAsDirty()
+    //
+    // this.textBox.markAsTouched()
+    // this.textBox.markAsDirty()
+    this.control.valueChanges.subscribe(data => console.log(data, this.control.valid));
 
-    this.textBox.markAsTouched()
-    this.textBox.markAsDirty()
-    this.control.valueChanges.subscribe(data => console.log(data));
+    this.form.valueChanges.subscribe(data => console.log(data));
   }
 
   kek = 100;

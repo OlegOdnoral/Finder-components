@@ -12,7 +12,7 @@ import { SecondaryButtonDirective } from './directives/secondary-button/secondar
 import { FinderDropdownDirective } from './directives/finder-dropdown/finder-dropdown.directive';
 import { MatInputModule } from "@angular/material/input";
 import { FinderSelectorComponent } from './core/finder-selector/finder-selector.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { OverlayModule } from "@angular/cdk/overlay";
 import { FinderRadioComponent } from './core/finder-radio/finder-radio.component';
@@ -27,6 +27,7 @@ import { FinderTextAreaModule } from "./core/finder-text-area/finder-text-area.m
 import { FinderValidationMessageModule } from "./core/finder-validation-message/finder-validation-message.module";
 import { FinderSelectorModule } from "./core/finder-selector/finder-selector.module";
 import { FinderRadioModule } from "./core/finder-radio/finder-radio.module";
+import { LolKekComponent } from './core/lol-kek/lol-kek.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FinderRadioModule } from "./core/finder-radio/finder-radio.module";
     FinderDropdownDirective,
     FButtonDirective,
     FinderPrimaryDirective,
+    LolKekComponent,
 
   ],
   imports: [
@@ -61,6 +63,7 @@ import { FinderRadioModule } from "./core/finder-radio/finder-radio.module";
     MatSelectModule,
     MatInputModule,
     ScrollingModule,
+    FormsModule,
     ReactiveFormsModule,
     OverlayModule
   ],

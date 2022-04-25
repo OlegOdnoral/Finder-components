@@ -113,7 +113,15 @@
   <div class="container-row">
     <app-finder-input [type]="'text'" [disabled]="true" [placeholder]="'Search'"></app-finder-input>
 
-    <app-finder-input [type]="'text'" [placeholder]="'Search'"></app-finder-input>
+
+    <form>
+      <app-finder-input [type]="'text'"  [placeholder]="'Search 1'" [formControl]="control"></app-finder-input>
+    </form>
+
+<!--    <form [formGroup]="form">-->
+<!--      <app-lol-kek formControlName="textBoxS"></app-lol-kek>-->
+<!--    </form>-->
+
 
     <app-finder-input [type]="'text'" [formControl]="textBox" [placeholder]="'Search'"></app-finder-input>
   </div>

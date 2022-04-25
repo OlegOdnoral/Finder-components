@@ -1,7 +1,9 @@
 <div class="input-wrapper">
-  <input [type]="type"
+  <input #input
+         [type]="type"
          [placeholder]="placeholder"
-         [formControl]="formControl"
          [readonly]="disabled"
-         [ngClass]="formControl.valid ? '' : 'error'">
+         [ngClass]="isValid ? '' : 'error'"
+         (change)="writeValue(input?.value)"
+  >
 </div>
