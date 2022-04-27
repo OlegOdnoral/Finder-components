@@ -28,6 +28,8 @@ import { FinderValidationMessageModule } from "./core/finder-validation-message/
 import { FinderSelectorModule } from "./core/finder-selector/finder-selector.module";
 import { FinderRadioModule } from "./core/finder-radio/finder-radio.module";
 import { LolKekComponent } from './core/lol-kek/lol-kek.component';
+import { OlegComponent } from './tmp/oleg/oleg.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -41,11 +43,13 @@ import { LolKekComponent } from './core/lol-kek/lol-kek.component';
     FButtonDirective,
     FinderPrimaryDirective,
     LolKekComponent,
+    OlegComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
 
     FinderButtonModule,
     FinderCheckboxModule,

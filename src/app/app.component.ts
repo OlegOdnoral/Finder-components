@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   form = new FormGroup({ 'textBoxS': this.textBoxS })
 
-  control = new FormControl(null, [ Validators.minLength(10) ]);
+  control = new FormControl(null);
 
   selected = 'option2';
 

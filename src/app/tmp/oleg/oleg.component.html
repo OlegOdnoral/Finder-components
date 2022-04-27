@@ -1,0 +1,14 @@
+<div
+  class="registration-wrapper relative flex flex-col flex-grow w-full overflow-hidden"
+>
+  <div class="completed-holder block text-center" *ngIf="todoList.length <= 2; else completed">
+    <p>Press button</p>
+    <button [disabled]="todoList.length > 2" (click)="addItem()">Add Item</button>&nbsp;
+  </div>
+  <ng-template #completed>
+    <div class="completed-holder block text-center" >
+      <h1>Completed</h1>
+    </div>
+  </ng-template>
+
+</div>

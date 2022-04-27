@@ -20,7 +20,7 @@ import { TemplatePortal } from "@angular/cdk/portal";
   selector: 'finder-selector',
   templateUrl: './finder-selector.component.html',
   styleUrls: [ './finder-selector.component.scss' ],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => FinderSelectorComponent),
@@ -35,7 +35,6 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
   @Input() options: any[] = [];
   @Input() disabled = false;
   @Input() optionTpl!: TemplateRef<any>;
-  @Input() formControl = new FormControl();
 
   @Output() selectionChange = new EventEmitter();
   @Output() closed = new EventEmitter();
@@ -44,6 +43,8 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
   @ViewChild('dropdown') dropdown!: TemplateRef<any>
 
   public visibleOptions = 5;
+  public touched: boolean = false;
+  public formControl = new FormControl();
 
   private overlayRef!: OverlayRef;
   private dropdownClosingActionsSub = Subscription.EMPTY;
@@ -56,8 +57,8 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
 
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
-    private changeDetectorRef: ChangeDetectorRef,
     private elementRef: ElementRef<HTMLElement>,
+    private cdr: ChangeDetectorRef,
     private overlay: Overlay,
     @Optional() @Host() private scrollContainer: CdkScrollable
   ) {}
@@ -89,17 +90,27 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     this.destroyed.complete()
   }
 
-  registerOnChange(fn: any) {
+  public registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any) {
+  public registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
 
-  writeValue(value: any) {
-    this.value = value;
-    this.onChange(this.value);
+  public writeValue(value: string|undefined): void {
+    if (value) {
+      this.value = value;
+      this.onChange(this.value);
+      this.markAsTouched();
+    }
+  }
+
+  public markAsTouched(): void {
+    if (!this.touched) {
+      this.onTouched();
+      this.touched = true;
+    }
   }
 
   public open(): void {
@@ -133,12 +144,28 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
 
   public search(value: string): void {
     this.options = this.originalOptions.filter(option => option[this.labelKey].includes(value));
-    requestAnimationFrame(() => (this.visibleOptions = this.options.length || 1));
+    this.visibleOptions = this.options.length || 1;
+    this.cdr.detectChanges();
   }
 
   private openDropdown(dropdownTpl: TemplateRef<any>, origin: HTMLElement): void {
     this.isDropdownOpen = true;
-    this.overlayRef = this.overlay.create({
+    this.overlayRef = this.createOverlay(origin);
+
+    const templatePortal = new TemplatePortal(
+      dropdownTpl,
+      this.viewContainerRef
+    );
+    this.overlayRef.attach(templatePortal);
+
+    this.dropdownClosingActionsSub = this.dropdownClosingActions()
+      .subscribe(() => this.close());
+
+    this.cdr.markForCheck();
+  }
+
+  private createOverlay(origin: HTMLElement): OverlayRef {
+    return this.overlay.create({
       width: origin.offsetWidth,
       scrollStrategy: this.overlay.scrollStrategies.reposition({ scrollThrottle: 0, autoClose: false }),
       positionStrategy: this.overlay
@@ -158,17 +185,6 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
           }
         ])
     });
-
-    const templatePortal = new TemplatePortal(
-      dropdownTpl,
-      this.viewContainerRef
-    );
-    this.overlayRef.attach(templatePortal);
-
-    this.dropdownClosingActionsSub = this.dropdownClosingActions()
-      .subscribe(() => this.close());
-
-    this.changeDetectorRef.markForCheck();
   }
 
   private dropdownClosingActions(): Observable<MouseEvent | unknown> {
@@ -187,7 +203,7 @@ export class FinderSelectorComponent implements OnInit, OnDestroy, ControlValueA
     this.overlayRef.detach();
     this.isDropdownOpen = false;
 
-    this.changeDetectorRef.markForCheck();
+    this.cdr.markForCheck();
   }
 
 }
